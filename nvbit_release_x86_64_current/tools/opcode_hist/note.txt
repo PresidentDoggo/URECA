@@ -1,0 +1,2 @@
+These are my current working modified files
+Also Makefile has been modified so ARCH=sm_80
