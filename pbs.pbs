@@ -1,0 +1,14 @@
+#!/bin/bash
+#PBS -N matrixMult
+#PBS -P personal
+#PBS -l select=1:ncpus=1:ngpus=1:mem=800mb
+#PBS -l walltime=00:30:00
+#PBS -j oe
+#PBS -o o.txt
+
+module unload cuda
+module load cuda/12.8.1
+
+cd $PBS_O_WORKDIR
+
+WINDOW_SIZE=10000 LD_PRELOAD=nvbit_release_x86_64/tools/opcode_hist/opcode_hist.so ./q3
