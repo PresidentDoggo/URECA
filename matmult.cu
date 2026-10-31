@@ -1,5 +1,5 @@
 #include <iostream>
-#define N 10000
+#define N 100
 #define TILE 16
 #define CUDA_CHECK(call) do { \
 		cudaError_t err = call; \
