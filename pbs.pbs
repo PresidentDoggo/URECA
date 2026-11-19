@@ -11,4 +11,4 @@ module load cuda/12.8.1
 
 cd $PBS_O_WORKDIR
 
-WINDOW_SIZE=10000 LD_PRELOAD=nvbit_release_x86_64/tools/opcode_hist/opcode_hist.so ./q3
+WINDOW_SIZE=10000 LD_PRELOAD=nvbit_release_x86_64/tools/custom/custom.so ./matmult

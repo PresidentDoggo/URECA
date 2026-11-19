@@ -1,0 +1,6 @@
+nvcc -ccbin=g++ -D_FORCE_INLINES -dc -c -std=c++11 -I../../core -Xptxas -cloning=no -Xcompiler -Wall -arch=all -O3 -Xcompiler -fPIC host.cu -o host.o
+nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+nvcc -ccbin=g++ -D_FORCE_INLINES -I../../core  -Xptxas -astoolspatch --keep-device-functions -arch=all -Xcompiler -Wall -Xcompiler -fPIC -c inject_funcs.cu -o inject_funcs.o
+nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+nvcc -ccbin=g++ -D_FORCE_INLINES -arch=all -O3 host.o inject_funcs.o -L../../core -lnvbit -L /app/apps/cuda/12.8.1/lib64 -lcuda -lcudart_static -shared -o custom.so
+nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
